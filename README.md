@@ -7,7 +7,7 @@ Angular4 web client for Key Value Store Server (https://github.com/AshwinMulky/K
 - yarn
 - angular CLI
 
-##Download node modules
+## Download node modules
 
 - `npm install` **or** `yarn install`
 

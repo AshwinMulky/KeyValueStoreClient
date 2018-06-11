@@ -23,7 +23,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Screenshots
 
 ### Key Value View: 
-![alt text](https://raw.githubusercontent.com/AshwinMulky/KeyValueStoreClient/master/src/assets/images/key-value.png "Key Value View")
+![alt text](https://raw.githubusercontent.com/AshwinMulky/KeyValueStoreClient/master/src/assets/images/key-val.png "Key Value View")
 
 ### Key Value Add View: 
 ![alt text](https://raw.githubusercontent.com/AshwinMulky/KeyValueStoreClient/master/src/assets/images/add.png "Key Value Add View")

@@ -19,3 +19,17 @@ Angular4 web client for Key Value Store Server (https://github.com/AshwinMulky/K
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+## Screenshots
+
+### Key Value View: 
+![alt text](https://raw.githubusercontent.com/AshwinMulky/KeyValueStoreClient/master/src/assets/images/key-value.png "Key Value View")
+
+### Key Value Add View: 
+![alt text](https://raw.githubusercontent.com/AshwinMulky/KeyValueStoreClient/master/src/assets/images/add.png "Key Value Add View")
+
+### Key Value Update View: 
+![alt text](https://raw.githubusercontent.com/AshwinMulky/KeyValueStoreClient/master/src/assets/images/update.png "Key Value Update View")
+
+### Audits View: 
+![alt text](https://raw.githubusercontent.com/AshwinMulky/KeyValueStoreClient/master/src/assets/images/audit.png "Audits View")

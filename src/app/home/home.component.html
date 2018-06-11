@@ -1,0 +1,38 @@
+<div class="container">
+  <app-navbar></app-navbar>
+  <h1>
+    Key Values
+  </h1>
+  <a class="btn btn-success" routerLink='/add'>
+    <i class="fa fa-plus"></i> Add</a>
+  <br>
+  <br>
+  <div *ngIf="keyValues.length < 1" class="alert alert-danger">
+    <strong>Empty result!</strong> No Key Value pair exist.
+  </div>
+  <table class="table table-hover table-bordered" *ngIf="keyValues.length > 0">
+    <thead class="thead-light">
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let keyValue of keyValues">
+        <td>{{keyValue.key}}</td>
+        <td>{{keyValue.value}}</td>
+        <td [routerLink]="['/update', keyValue.key]">
+          <a class="badge badge-info" style="color: white;">UPDATE</a>
+        </td>
+        <td>
+          <a class="badge badge-danger" style="color: white;" (click)="delete(keyValue.key)">DELETE</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br/>
+  <a class="btn btn-danger" style="color: white;" (click)="deleteAll()">
+    <i class="fa fa-trash"></i> Delete All</a>
+</div>

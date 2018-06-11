@@ -1,0 +1,49 @@
+<div class="container">
+  <app-navbar></app-navbar>
+  <h1>
+    Key Value Store Audit Records
+  </h1>
+  <br>
+  <b style="font-size: 25px;">Filter :</b>&nbsp;&nbsp;
+  <a class="btn btn-warning" (click)="fetchData()">
+    <i class="fa fa-filter"></i> All</a>&nbsp;&nbsp;
+  <a class="btn btn-warning" (click)="filter('create')">
+    <i class="fa fa-filter"></i> Create</a>&nbsp;&nbsp;
+  <a class="btn btn-warning" (click)="filter('update')">
+    <i class="fa fa-filter"></i> Update</a>&nbsp;&nbsp;
+  <a class="btn btn-warning" (click)="filter('delete')">
+    <i class="fa fa-filter"></i> Delete</a>&nbsp;&nbsp;
+  <a class="btn btn-warning" (click)="filter('delete-all')">
+    <i class="fa fa-filter"></i> Delete_All</a>&nbsp;&nbsp;
+  <a class="btn btn-warning" (click)="filter('read')">
+    <i class="fa fa-filter"></i> Read</a>&nbsp;&nbsp;
+  <a class="btn btn-warning" (click)="filter('read-all')">
+    <i class="fa fa-filter"></i> Read_All</a>&nbsp;&nbsp;
+  <br/>
+  <br/>
+  <div *ngIf="audits.length < 1" class="alert alert-danger">
+    <strong>Result!</strong> No Audit record exists for your query.
+  </div>
+  <table class="table table-hover table-bordered">
+    <thead class="thead-light">
+      <tr>
+        <th>ID</th>
+        <th>Key</th>
+        <th>Value</th>
+        <th>Operation</th>
+        <th>Timestamp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let audit of audits">
+        <td>{{audit.id}}</td>
+        <td>{{audit.key}}</td>
+        <td>{{audit.value}}</td>
+        <td>{{audit.operation}}</td>
+        <td>{{audit.createdDate | date:'yyyy-MM-dd HH:mm a z' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<br>

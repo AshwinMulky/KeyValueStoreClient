@@ -1,0 +1,36 @@
+<div class="container">
+  <app-navbar></app-navbar>
+  <h1>
+    Update Value
+  </h1>
+  <div *ngIf="isUpdated">
+    <div class="alert alert-success">
+      <strong>Success!</strong> {{confirmationString}}
+      <a href="/" class="alert-link">Click here to view</a>.
+    </div>
+  </div>
+  <p *ngIf="!exist">
+    Key Value doesn't exist
+  </p>
+  <div class="container">
+    <form id="formNewProduct" name="formNewProduct" #productData="ngForm" (ngSubmit)="update(productData.value)">
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <label for="key">Key: </label>
+          <input class="form-control" type="text" name="key" id="key" placeholder="key" [(ngModel)]="data.key" ngModel>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <label for="value">Value: </label>
+          <input class="form-control" type="text" name="value" id="value" [(ngModel)]="data.value" placeholder="value" ngModel>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-4">
+          <input class="btn btn-primary" type="submit" value="Update">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

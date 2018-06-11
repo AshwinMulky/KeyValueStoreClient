@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  background-color: rgb(250, 253, 233);
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  font-size: 30px;
+  padding: 10px;
+}
+
+a:hover {
+  cursor: pointer;
+  color: blue;
+}
+

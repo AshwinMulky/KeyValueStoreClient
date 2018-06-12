@@ -20,7 +20,7 @@ export class AddComponent implements OnInit {
       "value": keyValue.value
     }
     this.http.post("http://localhost:8080/api/key-values", this.keyValueObj).subscribe((res: Response) => {
-      this.confirmationString = "KeyValue(" + this.keyValueObj.key + ", " + this.keyValueObj.value + ") has been added. ";
+      this.confirmationString = "KeyValue(" + this.keyValueObj.key + ", " + this.keyValueObj.value + ") has been added/updated. ";
       this.isAdded = true;
     })
   }

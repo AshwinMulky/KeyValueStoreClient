@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private http: Http) { }
   id: number;
+  disableDeleteAll: boolean;
+  currentKey: string;
   private headers = new Headers({ 'Content-Type': 'application/json' });
 
   keyValues = [];
@@ -18,28 +20,32 @@ export class HomeComponent implements OnInit {
     this.http.get("http://localhost:8080/api/key-values")
       .subscribe((res: Response) => {
         this.keyValues = res.json();
+        this.disableDeleteAll = false;
+        if(this.keyValues.length < 1){
+          this.disableDeleteAll = true;
+        }
       }
       )
   }
 
   delete = function (id) {
-    if (confirm("Are you sure?")) {
       const url = `${"http://localhost:8080/api/key-values/keys"}/${id}`;
       return this.http.delete(url, { headers: this.headers }).toPromise()
         .then(() => {
           this.fetchData();
         })
-    }
   }
 
   deleteAll = function () {
-    if (confirm("Are you sure?")) {
       const url = `${"http://localhost:8080/api/key-values"}`;
       return this.http.delete(url, { headers: this.headers }).toPromise()
         .then(() => {
           this.fetchData();
         })
-    }
+  }
+
+  setKey = function(key) {
+    this.currentKey = key;
   }
 
   ngOnInit() {

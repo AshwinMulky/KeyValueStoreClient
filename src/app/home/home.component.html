@@ -27,12 +27,64 @@
           <a class="badge badge-info" style="color: white;">UPDATE</a>
         </td>
         <td>
-          <a class="badge badge-danger" style="color: white;" (click)="delete(keyValue.key)">DELETE</a>
+          <button (click)="setKey(keyValue.key)" class="badge badge-danger" style="color: white;"  data-toggle="modal" data-target="#deleteModal" data-id="keyValue.key">DELETE</button>
         </td>
       </tr>
     </tbody>
   </table>
   <br/>
-  <a class="btn btn-danger" style="color: white;" (click)="deleteAll()">
-    <i class="fa fa-trash"></i> Delete All</a>
+  <button class="btn btn-danger" style="color: white;" data-toggle="modal" data-target="#deleteAllModal" [disabled]="disableDeleteAll">
+    <i class="fa fa-trash"></i> Delete All</button>
 </div>
+
+<!-- The Modal deleteModal -->
+<div class="modal fade" id="deleteModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Delete Key</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Are you sure to delete key '{{ currentKey }}'?
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="delete(currentKey)">Yes</button>
+          <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<!-- The Modal deleteAllModal -->
+  <div class="modal fade" id="deleteAllModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Delete all keys</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          Are you sure to delete all keys?
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteAll()">Yes</button>
+          <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
